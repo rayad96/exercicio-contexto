@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { NavLink } from 'react-router-dom'; 
 
 import { Context } from "../../context";
+import Ball from './ball';
 
 export default function Home() {
   const { setCount } = useContext(Context)
@@ -10,5 +11,9 @@ export default function Home() {
     setCount((old) => old + 1)
   }, [setCount]);
   
-  return <NavLink to="/introduction">ir para introdução</NavLink>
+  return (
+    <>
+      <Ball size={50} color="#ff0000" />
+    </>
+  )
 }
